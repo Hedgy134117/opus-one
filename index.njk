@@ -9,6 +9,6 @@ layout: layouts/base.njk
 <h2>Composers</h2>
 {%- for composer in collections.composer -%}
     <h3>
-        <a href="{{ composer.url }}">{{ composer.data.fullName }}</a>
+        <a href="{{ composer.url | url }}">{{ composer.data.fullName }}</a>
     </h3>
 {%- endfor -%}

@@ -7,7 +7,7 @@ layout: layouts/base.njk
 {%- for composition in collections.composition -%}
     {% if fullName == composition.data.composer %}
         <p>
-            <a href="{{ composition.url }}">{{ composition.data.title }}</a>
+            <a href="{{ composition.url | url }}">{{ composition.data.title }}</a>
         </p>
     {% endif %}
 {%- endfor -%}
