@@ -3,4 +3,12 @@ title: Homepage
 layout: layouts/base.njk
 ---
 
-<h1>Hello World</h1>
+<h1>Opus One</h1>
+<p>A work-in-progress collection of classical music</p>
+
+<h2>Composers</h2>
+{%- for composer in collections.composer -%}
+    <h3>
+        <a href="{{ composer.url }}">{{ composer.data.fullName }}</a>
+    </h3>
+{%- endfor -%}

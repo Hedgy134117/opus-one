@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>{{ fullName }}</h1>
+<h2>Compositions</h2>
+{%- for composition in collections.composition -%}
+    {% if fullName == composition.data.composer %}
+        <p>
+            <a href="{{ composition.url }}">{{ composition.data.title }}</a>
+        </p>
+    {% endif %}
+{%- endfor -%}
