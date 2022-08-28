@@ -3,6 +3,22 @@ layout: layouts/base.njk
 ---
 
 <h1>{{ title }}</h1>
-<p>by {{ composer }}</p>
+<p>
+    {%- if not uniqueOpus -%}Op. {%- endif -%}
+    {{ opus }} by {{ composer }}
+</p>
 
-{{ content }}
+<p>
+    <a href="{{ imslp | url }}">Sheet Music (IMSLP)</a>
+</p>
+
+<h2>Sheet Music Videos</h2>
+{% for video in sheetVideos %}
+    <div>
+        <p>
+            <a href="{{ video.link }}">{{ video.link }}</a>
+        </p>
+        <p>Performer: {{ video.performer }}</p>
+        <p>Channel: {{ video.channel }}</p>
+    </div>
+{% endfor %}
